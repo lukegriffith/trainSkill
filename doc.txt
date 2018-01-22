@@ -1,0 +1,220 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://thalesgroup.com/RTTI/2013-11-28/Token/types
+     ns1: http://thalesgroup.com/RTTI/2017-10-01/ldb/
+     ns2: http://thalesgroup.com/RTTI/2007-10-10/ldb/commontypes
+     ns3: http://thalesgroup.com/RTTI/2015-11-27/ldb/commontypes
+     ns4: http://thalesgroup.com/RTTI/2017-10-01/ldb/types
+     ns5: http://thalesgroup.com/RTTI/2016-02-16/ldb/commontypes
+     ns6: http://thalesgroup.com/RTTI/2017-02-02/ldb/commontypes
+     ns7: http://thalesgroup.com/RTTI/2017-10-01/ldb/commontypes
+     ns8: http://thalesgroup.com/RTTI/2012-01-13/ldb/types
+     ns9: http://thalesgroup.com/RTTI/2015-11-27/ldb/types
+     ns10: http://thalesgroup.com/RTTI/2016-02-16/ldb/types
+
+Global elements:
+     ns0:AccessToken(ns0:AccessToken)
+     ns1:GetArrBoardWithDetailsRequest(ns1:GetBoardRequestParams)
+     ns1:GetArrBoardWithDetailsResponse(ns1:StationBoardWithDetailsResponseType)
+     ns1:GetArrDepBoardWithDetailsRequest(ns1:GetBoardRequestParams)
+     ns1:GetArrDepBoardWithDetailsResponse(ns1:StationBoardWithDetailsResponseType)
+     ns1:GetArrivalBoardRequest(ns1:GetBoardRequestParams)
+     ns1:GetArrivalBoardResponse(ns1:StationBoardResponseType)
+     ns1:GetArrivalDepartureBoardRequest(ns1:GetBoardRequestParams)
+     ns1:GetArrivalDepartureBoardResponse(ns1:StationBoardResponseType)
+     ns1:GetDepBoardWithDetailsRequest(ns1:GetBoardRequestParams)
+     ns1:GetDepBoardWithDetailsResponse(ns1:StationBoardWithDetailsResponseType)
+     ns1:GetDepartureBoardRequest(ns1:GetBoardRequestParams)
+     ns1:GetDepartureBoardResponse(ns1:StationBoardResponseType)
+     ns1:GetFastestDeparturesRequest(ns1:GetDeparturesRequestParams)
+     ns1:GetFastestDeparturesResponse(ns1:DeparturesBoardResponseType)
+     ns1:GetFastestDeparturesWithDetailsRequest(ns1:GetDeparturesRequestParams)
+     ns1:GetFastestDeparturesWithDetailsResponse(ns1:DeparturesBoardWithDetailsResponseType)
+     ns1:GetNextDeparturesRequest(ns1:GetDeparturesRequestParams)
+     ns1:GetNextDeparturesResponse(ns1:DeparturesBoardResponseType)
+     ns1:GetNextDeparturesWithDetailsRequest(ns1:GetDeparturesRequestParams)
+     ns1:GetNextDeparturesWithDetailsResponse(ns1:DeparturesBoardWithDetailsResponseType)
+     ns1:GetServiceDetailsRequest(ns1:GetServiceDetailsRequestParams)
+     ns1:GetServiceDetailsResponse(ns1:ServiceDetailsResponseType)
+     
+
+Global types:
+     xsd:anyType
+     ns2:CRSType
+     ns2:FilterType
+     ns2:LocationNameType
+     ns2:PlatformType
+     ns2:RIDType
+     ns2:RSIDType
+     ns2:ServiceType
+     ns2:TOCCode
+     ns2:TOCName
+     ns2:TiplocType
+     ns2:TrainIDType
+     ns2:UIDType
+     ns8:AdhocAlertTextType
+     ns8:ArrayOfAdhocAlert(adhocAlertText: ns8:AdhocAlertTextType[])
+     ns8:ArrayOfArrayOfCallingPoints(callingPointList: ns8:ArrayOfCallingPoints[])
+     ns8:ArrayOfCallingPoints(callingPoint: ns8:CallingPoint[], serviceType: ns2:ServiceType, serviceChangeRequired: xsd:boolean)
+     ns8:ArrayOfNRCCMessages(message: ns8:NRCCMessage[])
+     ns8:ArrayOfServiceItems(service: ns8:ServiceItem[])
+     ns8:ArrayOfServiceLocations(location: ns8:ServiceLocation[])
+     ns8:CallingPoint(locationName: ns2:LocationNameType, crs: ns2:CRSType, st: ns8:TimeType, et: ns8:TimeType, at: ns8:TimeType, adhocAlerts: ns8:ArrayOfAdhocAlert)
+     ns8:NRCCMessage(xsd:string)
+     ns8:ServiceDetails(generatedAt: xsd:dateTime, serviceType: ns2:ServiceType, locationName: ns2:LocationNameType, crs: ns2:CRSType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCancelled: xsd:boolean, disruptionReason: xsd:string, overdueMessage: xsd:string, platform: ns2:PlatformType, sta: ns8:TimeType, eta: ns8:TimeType, ata: ns8:TimeType, std: ns8:TimeType, etd: ns8:TimeType, atd: ns8:TimeType, adhocAlerts: ns8:ArrayOfAdhocAlert, previousCallingPoints: ns8:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns8:ArrayOfArrayOfCallingPoints)
+     ns8:ServiceIDType
+     ns8:ServiceItem(origin: ns8:ArrayOfServiceLocations, destination: ns8:ArrayOfServiceLocations, currentOrigins: ns8:ArrayOfServiceLocations, currentDestinations: ns8:ArrayOfServiceLocations, sta: ns8:TimeType, eta: ns8:TimeType, std: ns8:TimeType, etd: ns8:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, serviceID: ns8:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert)
+     ns8:ServiceLocation(locationName: ns2:LocationNameType, crs: ns2:CRSType, via: xsd:string, futureChangeTo: xsd:string)
+     ns8:StationBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns8:ArrayOfServiceItems, busServices: ns8:ArrayOfServiceItems, ferryServices: ns8:ArrayOfServiceItems)
+     ns8:TimeType
+     ns0:AccessToken(TokenValue: xsd:string)
+     ns3:ServiceIDType
+     ns3:TimeType
+     ns3:TrainLength
+     ns9:ArrayOfArrayOfCallingPoints(callingPointList: ns9:ArrayOfCallingPoints[])
+     ns9:ArrayOfCallingPoints(callingPoint: ns9:CallingPoint[], serviceType: ns2:ServiceType, serviceChangeRequired: xsd:boolean, assocIsCancelled: xsd:boolean)
+     ns9:ArrayOfDepartureItems(destination: ns9:DepartureItem[])
+     ns9:ArrayOfDepartureItemsWithCallingPoints(destination: ns9:DepartureItemWithCallingPoints[])
+     ns9:ArrayOfServiceItems(service: ns9:ServiceItem[])
+     ns9:ArrayOfServiceItemsWithCallingPoints(service: ns9:ServiceItemWithCallingPoints[])
+     ns9:ArrayOfServiceLocations(location: ns9:ServiceLocation[])
+     ns9:BaseServiceItem(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert)
+     ns9:BaseStationBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean)
+     ns9:CallingPoint(locationName: ns2:LocationNameType, crs: ns2:CRSType, st: ns3:TimeType, et: ns3:TimeType, at: ns3:TimeType, isCancelled: xsd:boolean, length: ns3:TrainLength, detachFront: xsd:boolean, adhocAlerts: ns8:ArrayOfAdhocAlert)
+     ns9:DepartureItem(service: ns9:ServiceItem, crs: ns2:CRSType)
+     ns9:DepartureItemWithCallingPoints(service: ns9:ServiceItemWithCallingPoints, crs: ns2:CRSType)
+     ns9:DeparturesBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns9:ArrayOfDepartureItems)
+     ns9:DeparturesBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns9:ArrayOfDepartureItemsWithCallingPoints)
+     ns9:ServiceDetails(generatedAt: xsd:dateTime, serviceType: ns2:ServiceType, locationName: ns2:LocationNameType, crs: ns2:CRSType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCancelled: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, overdueMessage: xsd:string, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, platform: ns2:PlatformType, sta: ns3:TimeType, eta: ns3:TimeType, ata: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, atd: ns3:TimeType, adhocAlerts: ns8:ArrayOfAdhocAlert, previousCallingPoints: ns9:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns9:ArrayOfArrayOfCallingPoints)
+     ns9:ServiceItem(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations)
+     ns9:ServiceItemWithCallingPoints(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations, previousCallingPoints: ns9:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns9:ArrayOfArrayOfCallingPoints)
+     ns9:ServiceLocation(locationName: ns2:LocationNameType, crs: ns2:CRSType, via: xsd:string, futureChangeTo: xsd:string, assocIsCancelled: xsd:boolean)
+     ns9:StationBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns9:ArrayOfServiceItems, busServices: ns9:ArrayOfServiceItems, ferryServices: ns9:ArrayOfServiceItems)
+     ns9:StationBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns9:ArrayOfServiceItemsWithCallingPoints, busServices: ns9:ArrayOfServiceItemsWithCallingPoints, ferryServices: ns9:ArrayOfServiceItemsWithCallingPoints)
+     ns5:RSIDType
+     ns10:ArrayOfDepartureItems(destination: ns10:DepartureItem[])
+     ns10:ArrayOfDepartureItemsWithCallingPoints(destination: ns10:DepartureItemWithCallingPoints[])
+     ns10:ArrayOfServiceItems(service: ns10:ServiceItem[])
+     ns10:ArrayOfServiceItemsWithCallingPoints(service: ns10:ServiceItemWithCallingPoints[])
+     ns10:BaseServiceItem(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType)
+     ns10:DepartureItem(service: ns10:ServiceItem, crs: ns2:CRSType)
+     ns10:DepartureItemWithCallingPoints(service: ns10:ServiceItemWithCallingPoints, crs: ns2:CRSType)
+     ns10:DeparturesBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns10:ArrayOfDepartureItems)
+     ns10:DeparturesBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns10:ArrayOfDepartureItemsWithCallingPoints)
+     ns10:ServiceDetails(generatedAt: xsd:dateTime, serviceType: ns2:ServiceType, locationName: ns2:LocationNameType, crs: ns2:CRSType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCancelled: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, overdueMessage: xsd:string, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, platform: ns2:PlatformType, sta: ns3:TimeType, eta: ns3:TimeType, ata: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, atd: ns3:TimeType, adhocAlerts: ns8:ArrayOfAdhocAlert, previousCallingPoints: ns9:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns9:ArrayOfArrayOfCallingPoints, rsid: ns5:RSIDType)
+     ns10:ServiceItem(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations)
+     ns10:ServiceItemWithCallingPoints(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations, previousCallingPoints: ns9:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns9:ArrayOfArrayOfCallingPoints)
+     ns10:StationBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns10:ArrayOfServiceItems, busServices: ns10:ArrayOfServiceItems, ferryServices: ns10:ArrayOfServiceItems)
+     ns10:StationBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns10:ArrayOfServiceItemsWithCallingPoints, busServices: ns10:ArrayOfServiceItemsWithCallingPoints, ferryServices: ns10:ArrayOfServiceItemsWithCallingPoints)
+     ns6:CoachClassType
+     ns6:CoachNumberType
+     ns6:LoadingValue
+     ns7:ToiletAvailabilityType(ns7:ToiletType, status: ns7:ToiletStatus)
+     ns7:ToiletStatus
+     ns7:ToiletType
+     ns4:ArrayOfArrayOfCallingPoints(callingPointList: ns4:ArrayOfCallingPoints[])
+     ns4:ArrayOfCallingPoints(callingPoint: ns4:CallingPoint[], serviceType: ns2:ServiceType, serviceChangeRequired: xsd:boolean, assocIsCancelled: xsd:boolean)
+     ns4:ArrayOfCoaches(coach: ns4:CoachData[])
+     ns4:ArrayOfDepartureItems(destination: ns4:DepartureItem[])
+     ns4:ArrayOfDepartureItemsWithCallingPoints(destination: ns4:DepartureItemWithCallingPoints[])
+     ns4:ArrayOfServiceItems(service: ns4:ServiceItem[])
+     ns4:ArrayOfServiceItemsWithCallingPoints(service: ns4:ServiceItemWithCallingPoints[])
+     ns4:BaseServiceDetails(generatedAt: xsd:dateTime, serviceType: ns2:ServiceType, locationName: ns2:LocationNameType, crs: ns2:CRSType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, rsid: ns5:RSIDType, isCancelled: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, overdueMessage: xsd:string, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, platform: ns2:PlatformType, sta: ns3:TimeType, eta: ns3:TimeType, ata: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, atd: ns3:TimeType)
+     ns4:CallingPoint(locationName: ns2:LocationNameType, crs: ns2:CRSType, st: ns3:TimeType, et: ns3:TimeType, at: ns3:TimeType, isCancelled: xsd:boolean, length: ns3:TrainLength, detachFront: xsd:boolean, formation: ns4:FormationData, adhocAlerts: ns8:ArrayOfAdhocAlert)
+     ns4:CoachData(coachClass: ns6:CoachClassType, toilet: ns7:ToiletAvailabilityType, loading: ns6:LoadingValue, number: ns6:CoachNumberType)
+     ns4:DepartureItem(service: ns4:ServiceItem, crs: ns2:CRSType)
+     ns4:DepartureItemWithCallingPoints(service: ns4:ServiceItemWithCallingPoints, crs: ns2:CRSType)
+     ns4:DeparturesBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns4:ArrayOfDepartureItems)
+     ns4:DeparturesBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, departures: ns4:ArrayOfDepartureItemsWithCallingPoints)
+     ns4:FormationData(avgLoading: ns6:LoadingValue, coaches: ns4:ArrayOfCoaches)
+     ns4:ServiceDetails(generatedAt: xsd:dateTime, serviceType: ns2:ServiceType, locationName: ns2:LocationNameType, crs: ns2:CRSType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, rsid: ns5:RSIDType, isCancelled: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, overdueMessage: xsd:string, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, platform: ns2:PlatformType, sta: ns3:TimeType, eta: ns3:TimeType, ata: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, atd: ns3:TimeType, adhocAlerts: ns8:ArrayOfAdhocAlert, formation: ns4:FormationData, sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations, formation: ns4:FormationData, previousCallingPoints: ns4:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns4:ArrayOfArrayOfCallingPoints)
+     ns4:ServiceItem(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations, formation: ns4:FormationData)
+     ns4:ServiceItemWithCallingPoints(sta: ns3:TimeType, eta: ns3:TimeType, std: ns3:TimeType, etd: ns3:TimeType, platform: ns2:PlatformType, operator: ns2:TOCName, operatorCode: ns2:TOCCode, isCircularRoute: xsd:boolean, isCancelled: xsd:boolean, filterLocationCancelled: xsd:boolean, serviceType: ns2:ServiceType, length: ns3:TrainLength, detachFront: xsd:boolean, isReverseFormation: xsd:boolean, cancelReason: xsd:string, delayReason: xsd:string, serviceID: ns3:ServiceIDType, adhocAlerts: ns8:ArrayOfAdhocAlert, rsid: ns5:RSIDType, origin: ns9:ArrayOfServiceLocations, destination: ns9:ArrayOfServiceLocations, currentOrigins: ns9:ArrayOfServiceLocations, currentDestinations: ns9:ArrayOfServiceLocations, formation: ns4:FormationData, previousCallingPoints: ns4:ArrayOfArrayOfCallingPoints, subsequentCallingPoints: ns4:ArrayOfArrayOfCallingPoints)
+     ns4:StationBoard(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns4:ArrayOfServiceItems, busServices: ns4:ArrayOfServiceItems, ferryServices: ns4:ArrayOfServiceItems)
+     ns4:StationBoardWithDetails(generatedAt: xsd:dateTime, locationName: ns2:LocationNameType, crs: ns2:CRSType, filterLocationName: ns2:LocationNameType, filtercrs: ns2:CRSType, filterType: ns2:FilterType, nrccMessages: ns8:ArrayOfNRCCMessages, platformAvailable: xsd:boolean, areServicesAvailable: xsd:boolean, trainServices: ns4:ArrayOfServiceItemsWithCallingPoints, busServices: ns4:ArrayOfServiceItemsWithCallingPoints, ferryServices: ns4:ArrayOfServiceItemsWithCallingPoints)
+     ns1:DeparturesBoardResponseType(DeparturesBoard: ns4:DeparturesBoard)
+     ns1:DeparturesBoardWithDetailsResponseType(DeparturesBoard: ns4:DeparturesBoardWithDetails)
+     ns1:GetBoardRequestParams(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int)
+     ns1:GetDeparturesRequestParams(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int)
+     ns1:GetServiceDetailsRequestParams(serviceID: ns3:ServiceIDType)
+     ns1:ServiceDetailsResponseType(GetServiceDetailsResult: ns4:ServiceDetails)
+     ns1:StationBoardResponseType(GetStationBoardResult: ns4:StationBoard)
+     ns1:StationBoardWithDetailsResponseType(GetStationBoardResult: ns4:StationBoardWithDetails)
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+
+Bindings:
+
+Service: ldb
+     Port: LDBServiceSoap (Soap11Binding: {http://thalesgroup.com/RTTI/2017-10-01/ldb/}LDBServiceSoap)
+         Operations:
+            GetArrBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetArrDepBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetArrivalBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetArrivalDepartureBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetDepBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetDepartureBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetFastestDepartures(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoard
+            GetFastestDeparturesWithDetails(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoardWithDetails
+            GetNextDepartures(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoard
+            GetNextDeparturesWithDetails(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoardWithDetails
+            GetServiceDetails(serviceID: ns3:ServiceIDType, _soapheaders={AccessToken: ns0:AccessToken}) -> GetServiceDetailsResult: ns4:ServiceDetails
+
+     Port: LDBServiceSoap12 (Soap12Binding: {http://thalesgroup.com/RTTI/2017-10-01/ldb/}LDBServiceSoap12)
+         Operations:
+            GetArrBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetArrDepBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetArrivalBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetArrivalDepartureBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetDepBoardWithDetails(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoardWithDetails
+            GetDepartureBoard(numRows: xsd:unsignedShort, crs: ns2:CRSType, filterCrs: ns2:CRSType, filterType: ns2:FilterType, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> GetStationBoardResult: ns4:StationBoard
+            GetFastestDepartures(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoard
+            GetFastestDeparturesWithDetails(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoardWithDetails
+            GetNextDepartures(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoard
+            GetNextDeparturesWithDetails(crs: ns2:CRSType, filterList: {crs: ns2:CRSType[]}, timeOffset: xsd:int, timeWindow: xsd:int, _soapheaders={AccessToken: ns0:AccessToken}) -> DeparturesBoard: ns4:DeparturesBoardWithDetails
+            GetServiceDetails(serviceID: ns3:ServiceIDType, _soapheaders={AccessToken: ns0:AccessToken}) -> GetServiceDetailsResult: ns4:ServiceDetails
+
