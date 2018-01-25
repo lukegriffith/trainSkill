@@ -12,9 +12,9 @@ class DepartureSkill(object):
 
     def getNextTrain(self):
         
-        dep = self.nrc.getFastestDepartures(self.origin, self.destination, self.offset)
+        dep = self.nrc.get_fastest_departures(self.origin, self.destination, self.offset)
 
 
         rsid = dep['departures']['destination'][0]['service']['rsid']
-              
-        
+
+        return rsid

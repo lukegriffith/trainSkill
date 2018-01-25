@@ -15,7 +15,7 @@ NR = NrClient(TOKEN, URI)
 DEP = DepartureSkill(NR, 'SNS', 'WAT', 30)
 
 
-DEP.getNextTrain()
+print( DEP.getNextTrain() )
 
 
 #NR.getArrivalBoard('SNS', 'WAT', 'from')
