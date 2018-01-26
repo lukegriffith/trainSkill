@@ -60,12 +60,3 @@ class DepartureSkill(object):
         else:
             self.message = 'No trains found.'
 
-'''
-
-DEP = DepartureSkill(NR, 'SNS', 'WAT', 30)
-
-rsid = DEP.get_next_train_id()
-
-print ( DEP.get_train_arrival(rsid, 'SNS', 'WAT'))
-
-'''
