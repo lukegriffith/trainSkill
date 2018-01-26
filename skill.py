@@ -24,22 +24,26 @@ class DepartureSkill(object):
         dep = self.nrc.get_fastest_departures(self.origin, self.destination, self.offset)
         service = dep['departures']['destination'][0]['service']
 
+        print(service)
+
         if service['sta'] != None:
-            self.departure.found = True
-            self.departure.sta = service['sta']
-            self.departure.eta = service['eta']
-            self.departure.origin = service['origin']['location'][0]['locationName']
+            self.departure['found'] = True
+            self.departure['sta'] = service['sta']
+            self.departure['eta'] = service['eta']
+            self.departure['origin'] = service['origin']['location'][0]['locationName']
 
         return service['rsid']
 
     def get_train_arrival(self, rsid):
 
-        trains = self.nrc.get_arrival_board_with_details(self.origin, self.destination, "from")
+        trains = self.nrc.get_arrival_board_with_details(self.origin, self.destination, "to")
 
 
         for service in trains['trainServices']['service']:
 
             if service['rsid'] == rsid:
+
+                print(service) 
                 self.arrival['found'] = True
                 self.arrival['sta'] = service['sta']
                 self.arrival['eta'] = service['eta']
@@ -53,8 +57,8 @@ class DepartureSkill(object):
         if self.departure['found']:
             self.get_train_arrival(departure_rsid)
             
-            self.message = 'Train from {0} will be at your station at {1}, it will arrive into its destination at {2}. Its running {4}'.format(
-                self.departure.origin, self.departure.sta, self.arrival.sta, self.arrival.eta
+            self.message = 'Train from {0} will be at your station at {1}, it will arrive into its destination at {2}. Its running {3}.'.format(
+                self.departure['origin'], self.departure['sta'], self.arrival['sta'], self.arrival['eta']
             )
 
         else:
